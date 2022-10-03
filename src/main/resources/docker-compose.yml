@@ -1,0 +1,11 @@
+services:
+  elasticsearch:
+    image: elasticsearch:8.4.2
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    environment:
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=password
+      - discovery.type=single-node
+      - xpack.security.enabled=true
